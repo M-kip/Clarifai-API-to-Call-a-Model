@@ -16,3 +16,19 @@ This is a Python script demonstrating how to use **Clarifai's integration with O
 
    ```bash
    pip install openai
+   2. **Set your API key**  
+      Export your Clarifai API key as an environment variable:
+
+      ```bash
+      export CLARIFAI_PAT=your_clarifai_pat_here
+      ```
+
+   3. **Run the script**  
+      Execute the Python script to generate a chat completion:
+
+      ```bash
+      python clarifai_openai_chat.py
+      ```
+
+   4. **Customize the model**  
+      You can change the model used by modifying the `model_id` variable in the script.
