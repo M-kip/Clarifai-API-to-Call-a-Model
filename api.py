@@ -1,10 +1,16 @@
 import os
 from openai import OpenAI
+from dotenv import load_dotenv
+# Load environment variables from a .env file
 from pprint import pprint as pp
 # Set the OpenAI API key from an environment variable
+load_dotenv()
+# Ensure you have the CLARIFAI_API_KEY set in your environment variables
+if not os.getenv("CLARIFAI_API_KEY"):
+    raise ValueError("CLARIFAI_API_KEY environment variable is not set.")
 client = OpenAI(
     base_url="https://api.clarifai.com/v2/ext/openai/v1",
-    api_key="3ad9c142c609489a8c8341bea1ba17b8",
+    api_key=os.getenv("CLARIFAI_API_KEY"),
 )
 try:
     response = client.chat.completions.create(
